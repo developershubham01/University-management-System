@@ -2,6 +2,17 @@
 
 A REST API for managing university operations built with Spring Boot and PostgreSQL. This project demonstrates entity relationship management, custom exception handling, and file-based logging.
 live Demo :  https://university-management-system-77lx.vercel.app/
+## Project Image
+![Project Image](https://raw.githubusercontent.com/developershubham01/University-management-System/main/Project%20Image/1.png)
+![Project Image](https://raw.githubusercontent.com/developershubham01/University-management-System/main/Project%20Image/2.png)
+![Project Image](https://raw.githubusercontent.com/developershubham01/University-management-System/main/Project%20Image/3.png)
+![Project Image](https://raw.githubusercontent.com/developershubham01/University-management-System/main/Project%20Image/4.png)
+![Project Image](https://raw.githubusercontent.com/developershubham01/University-management-System/main/Project%20Image/5.png)
+![Project Image](https://raw.githubusercontent.com/developershubham01/University-management-System/main/Project%20Image/6.png)
+![Project Image](https://raw.githubusercontent.com/developershubham01/University-management-System/main/Project%20Image/7.png)
+
+
+
 ## Features
 
 - Student registration and enrollment management
