@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>University Management — Frontend</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <h1>University Management System</h1>
+    <div class="nav-buttons">
+      <button data-view="dashboard">Dashboard</button>
+      <button data-view="students">Students</button>
+      <button data-view="professors">Professors</button>
+      <button data-view="courses">Courses</button>
+      <button data-view="assignments">Assignments</button>
+      <button data-view="submissions">Submissions</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="dashboard" class="view active">
+      <h2>Dashboard</h2>
+      <p>Quick actions:</p>
+      <div class="cards">
+        <div class="card" onclick="showView('students')">Manage Students</div>
+        <div class="card" onclick="showView('professors')">Manage Professors</div>
+        <div class="card" onclick="showView('courses')">Manage Courses</div>
+        <div class="card" onclick="showView('assignments')">Manage Assignments</div>
+        <div class="card" onclick="showView('submissions')">Manage Submissions</div>
+      </div>
+    </section>
+
+    <section id="students" class="view">
+      <h2>Students</h2>
+      <form id="studentForm" onsubmit="event.preventDefault(); addStudent();">
+        <label>Name <input name="name" required></label>
+        <label>Email <input name="email" type="email" required></label>
+        <label>Department <input name="department" required></label>
+        <label>Age <input name="age" type="number" min="16"></label>
+        <button type="submit">Add Student</button>
+      </form>
+
+      <div class="inline-forms">
+        <div>
+          <h4>Get by ID</h4>
+          <input id="getStudentId" placeholder="Student ID">
+          <button onclick="getStudentById()">Get</button>
+        </div>
+        <div>
+          <h4>Get by Name</h4>
+          <input id="getStudentName" placeholder="Student Name">
+          <button onclick="getStudentByName()">Search</button>
+        </div>
+      </div>
+
+      <div id="studentsResult" class="result"></div>
+    </section>
+
+    <section id="professors" class="view">
+      <h2>Professors</h2>
+      <form id="profForm" onsubmit="event.preventDefault(); addProfessor();">
+        <label>Name <input name="name" required></label>
+        <label>Email <input name="email" type="email"></label>
+        <label>Department <input name="department" required></label>
+        <button type="submit">Add Professor</button>
+      </form>
+
+      <div class="inline-forms">
+        <div>
+          <h4>Get by ID</h4>
+          <input id="getProfId" placeholder="Professor ID">
+          <button onclick="getProfessorById()">Get</button>
+        </div>
+        <div>
+          <h4>Get by Department</h4>
+          <input id="getProfDept" placeholder="Department">
+          <button onclick="getProfessorByDept()">Get</button>
+        </div>
+      </div>
+      <div id="professorResult" class="result"></div>
+    </section>
+
+    <section id="courses" class="view">
+      <h2>Courses</h2>
+      <form id="courseForm" onsubmit="event.preventDefault(); addCourse();">
+       <label>Title <input name="title" required></label>
+<label>Description <input name="description"></label>
+<label>Credit <input name="credit" type="number" min="1" required></label>
+<label>Course ID <input name="professorId" type="number" required></label>
+
+        <button type="submit">Add Course</button>
+      </form>
+
+      <div class="inline-forms">
+        <div>
+          <h4>Assign Student to Course</h4>
+          <input id="assignStudentId" placeholder="Student ID">
+          <input id="assignCourseId" placeholder="Course ID">
+          <button onclick="assignStudentToCourse()">Assign</button>
+        </div>
+      </div>
+
+      <div id="courseResult" class="result"></div>
+    </section>
+
+    <section id="assignments" class="view">
+      <h2>Assignments</h2>
+      <form id="assignmentForm" onsubmit="event.preventDefault(); addAssignment();">
+        <label>Title <input name="title" required></label>
+        <label>Description <input name="description"></label>
+        <label>Due Date <input name="dueDate" type="date"></label>
+        <label>Course ID <input name="courseId" type="number" required></label>
+        <button type="submit">Add Assignment</button>
+      </form>
+
+      <div class="inline-forms">
+        <div>
+          <h4>Get Assignment by ID</h4>
+          <input id="getAssignmentId" placeholder="Assignment ID">
+          <button onclick="getAssignmentById()">Get</button>
+        </div>
+      </div>
+
+      <div id="assignmentResult" class="result"></div>
+    </section>
+
+    <section id="submissions" class="view">
+      <h2>Submissions</h2>
+      <form id="submissionForm" onsubmit="event.preventDefault(); addSubmission();">
+        <label>Content <input name="content" required></label>
+        <label>Assignment ID <input name="assignmentId" type="number" required></label>
+        <label>Student ID <input name="studentId" type="number" required></label>
+        <button type="submit">Add Submission</button>
+      </form>
+
+      <div class="inline-forms">
+        <div>
+          <h4>Get Submission by ID</h4>
+          <input id="getSubmissionId" placeholder="Submission ID">
+          <button onclick="getSubmissionById()">Get</button>
+        </div>
+      </div>
+
+      <div id="submissionResult" class="result"></div>
+    </section>
+
+    <div id="log" class="log"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
