@@ -1,7 +1,7 @@
 # University Management System
 
 A REST API for managing university operations built with Spring Boot and PostgreSQL. This project demonstrates entity relationship management, custom exception handling, and file-based logging.
-
+live Demo :  https://university-management-system-77lx.vercel.app/
 ## Features
 
 - Student registration and enrollment management
@@ -87,11 +87,6 @@ src/main/java/com/example/demo/
 ```bash
 mvn test
 ```
-
-## Author
-
-[prerna-Katole123](https://github.com/prerna-Katole123)
-
 
 
 *Built to demonstrate Spring Boot, JPA relationships, exception handling, and logging.*
